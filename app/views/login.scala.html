@@ -1,0 +1,22 @@
+@(loginForm: Form[models.user.UserLogin])
+@import helper._
+@import helper.twitterBootstrap._
+
+@htmlTagInclude = {}
+@headTagInclude = {}
+@bodyTagInclude = {}
+
+@main("Login", htmlTagInclude, headTagInclude, bodyTagInclude ) {
+
+    <div class="container">
+        @helper.form(action = application.routes.LoginController.submit()) {
+            <fieldset>
+                <legend>Login </legend>
+                @helper.inputText(loginForm("email"),'_label -> "Email")
+                @helper.inputText(loginForm("password"),'_label -> "Password")
+            </fieldset>
+            <input type="submit" class="btn btn-primary" value="Login">
+            }
+    </div>
+
+}

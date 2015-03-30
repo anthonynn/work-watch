@@ -1,0 +1,24 @@
+@(registrationForm: Form[models.user.UserRegistration])
+@import helper.twitterBootstrap._
+
+@htmlTagInclude = {}
+@headTagInclude = {}
+@bodyTagInclude = {}
+
+@main("Register", htmlTagInclude, headTagInclude, bodyTagInclude ) {
+
+    <div class="container">
+        @helper.form(action = application.routes.RegistrationController.submit()) {
+            <fieldset>
+                <legend> Registration </legend>
+                @helper.inputText(registrationForm("email"),'_label -> "Email")
+                @helper.inputText(registrationForm("firstName"),'_label -> "First Name")
+                @helper.inputText(registrationForm("lastName"),'_label -> "Last Name")
+                @helper.select(registrationForm("project"), options = models.project.Projects.options, '_label -> "Project")
+                @helper.select(registrationForm("userType"), options = models.user.UserTypes.options, '_label -> "User Type")
+                @helper.inputText(registrationForm("password"),'_label -> "Password")
+            </fieldset>
+            <input type="submit" class="btn btn-primary" value="Register">
+        }
+    </div>
+}

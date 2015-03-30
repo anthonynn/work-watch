@@ -1,0 +1,26 @@
+<div class="table-responsive">
+    <fieldset>
+        <legend> Activity </legend>
+    </fieldset>
+    <table class="table table-striped">
+        <thead>
+        <tr class="row activity-header">
+            <th class="">Date</th>
+            <th class="check-in">Check-in Time</th>
+            <th class="check-in">Location</th>
+            <th class="check-out">Check-out Time</th>
+            <th class="check-out">Location</th>
+        </tr>
+        </thead>
+        <tbody class="text-nowrap">
+        <tr class="row activity-body" ng-repeat="activity in controller.userActivities">
+            <td class="">{{activity.in.date}}</td>
+            <td class="check-in">{{activity.in.time}}</td>
+            <td class="check-in">{{activity.in.coordinate.lat}}, {{activity.in.coordinate.long}}</td>
+            <td class="check-out">{{activity.out.time}}</td>
+            <td class="check-out"><span  ng-show="activity.out">{{activity.out.coordinate.lat}}, {{activity.out.coordinate.long}}</span></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

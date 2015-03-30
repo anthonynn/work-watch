@@ -1,0 +1,33 @@
+@(user: models.user.User)
+
+    @htmlTagInclude = {ng-app="SupervisorApp"}
+    @headTagInclude = {}
+    @bodyTagInclude = {}
+
+    @scripts = {
+        <script type="text/javascript" src='@routes.Assets.at("javascripts/maps/location.js")'></script>
+        <script type="text/javascript" src='@routes.Assets.at("javascripts/maps/tracking.js")'></script>
+        <script type="text/javascript" src='@routes.Assets.at("javascripts/worker/workers.js")'></script>
+        <script type="text/javascript" src='@routes.Assets.at("javascripts/supervisor/supervisor.js")'></script>
+    }
+
+@user_main("Supervisor Page", htmlTagInclude, headTagInclude, bodyTagInclude, scripts) {
+
+    <div class="container-fluid" ng-controller="SupervisorController as controller">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <div class="container" >
+                    <workers-navigation></workers-navigation>
+                </div>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+                <div class="container">
+                    <activity-log></activity-log>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}

@@ -1,0 +1,16 @@
+@(title: String, htmlTagInclude: Html, headTagInclude: Html, bodyTagInclude: Html, scripts: Html)(centerDivContent: Html)
+
+@main(title, htmlTagInclude, headTagInclude, bodyTagInclude ) {
+
+    <div class="container-fluid">
+
+        <div class="row">
+            @centerDivContent
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src='@routes.Assets.at("javascripts/jquery-1.11.2.js")'></script>
+    <script type="text/javascript" src='@routes.Assets.at("javascripts/angular.js")'></script>
+    @scripts
+}
