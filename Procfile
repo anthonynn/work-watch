@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependency/* Main
+web:    target/universal/stage/bin/Work-Watch
