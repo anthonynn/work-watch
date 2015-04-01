@@ -1,1 +1,1 @@
-web:    target/universal/stage/bin/Work-Watch
+web: target/universal/stage/bin/work-watch -Dhttp.port=${PORT} ${JAVA_OPTS}

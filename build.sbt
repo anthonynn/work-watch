@@ -1,4 +1,6 @@
-name := "Work-Watch"
+packageArchetype.java_application
+
+name := """work-watch"""
 
 version := "1.0-SNAPSHOT"
 
